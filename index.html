@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5 💰</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <!-- End of google Fonts -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <!-- End of bootstrap CSS  -->
+
+    <!-- Toastr-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- end of toastr css -->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- End of custom CSS -->
+</head>
+
+<body>
+    <main>
+        <div class="container my-5">
+            <h1 class="text-center mt-5">Save your Money 💰</h1>
+            <div class="mt-5 row">
+                <div class="col-md-6 col-12 mb-3">
+                    <div class="height money"></div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="card bg-offwhite height">
+                        <div class="card-body">
+
+                            <div class="input-container mx-auto">
+                                <!-- Income section -->
+                                <div class="my-3">
+                                    <h4 class="text-center mb-4">
+                                        Income
+                                    </h4>
+                                    <div class="form-group row">
+                                        <label for="incomeInput" class="col-4 col-form-label text-right">Income
+                                            :</label>
+                                        <div class="col-8">
+                                            <input type="text" id="incomeInput" class="form-control bg-gray"
+                                                name="income">
+                                            <span class="invalid-feedback">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of income section -->
+
+                                <!-- Expenses section -->
+                                <div class="my-3">
+                                    <h4 class="text-center mb-4">
+                                        Expenses
+                                    </h4>
+                                    <div class="form-group row mb-2">
+                                        <label for="foodExpenseInput" class="col-4 col-form-label text-right">Food
+                                            :</label>
+                                        <div class="col-8">
+                                            <input type="text" id="foodExpensesInput" class="form-control bg-gray"
+                                                name="food">
+                                            <span class="invalid-feedback">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-2">
+                                        <label for="rentExpensesInput" class="col-4 col-form-label text-right">Rent
+                                            :</label>
+                                        <div class="col-8">
+                                            <input type="text" id="rentExpensesInput" class="form-control bg-gray"
+                                                name="rent">
+                                            <span class="invalid-feedback">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="clothesExpensesInput"
+                                            class="col-4 col-form-label text-right">Clothes
+                                            :</label>
+                                        <div class="col-8">
+                                            <input type="text" id="clothesExpensesInput" class="form-control bg-gray"
+                                                name="clothes">
+                                            <span class="invalid-feedback">
+
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of expenses section -->
+
+                                <!-- Expenses calculation section -->
+                                <div class="my-3 text-center">
+
+                                    <button class="btn btn-primary" id="expensesCalculateBtn">
+                                        Calculate
+                                    </button>
+
+
+                                    <div class="mt-4">
+                                        <h5>
+                                            Total Expenses : <span id="total-expense">0.00</span> ৳
+                                        </h5>
+                                        <h5>
+                                            Balance : <span id="balance">0.00</span> ৳
+                                        </h5>
+                                    </div>
+
+
+                                </div>
+                                <!-- End of expenses calculation section -->
+
+                                <!-- Savings calculation section  -->
+                                <div class="mt-5 text-center">
+                                    <div class="form row">
+                                        <label for="saveInput" class="col-3 col-form-label text-right">Save :</label>
+                                        <div class="col-4">
+                                            <input type="text" id="saveInput" name="save" class="form-control bg-gray">
+                                            <small class="invalid-feedback">
+
+                                            </small>
+                                        </div>
+                                        <strong class="col-1">
+                                            %
+                                        </strong>
+                                        <div class="col-2">
+                                            <button class="btn btn-primary" id="saveBtn">Save</button>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h5>
+                                            Saving Amount : <span id="saving">0.00</span> ৳
+                                        </h5>
+                                        <h5>
+                                            Remaining Balance : <span id="remaining-balance">0.00</span> ৳
+                                        </h5>
+                                    </div>
+                                </div>
+                                <!-- End of savings calculation section  -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap scripts  -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+
+    <!-- End of bootstrap scripts  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- toastr script  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!--End of toastr script  -->
+
+    <!-- Main logic js -->
+    <script src="js/script.js"></script>
+    <!-- End of main logic js -->
+
+</body>
+
+</html>
